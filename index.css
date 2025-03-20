@@ -25,6 +25,8 @@
 .res-container{ 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly; /* Distributes cards evenly */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .res-card {  

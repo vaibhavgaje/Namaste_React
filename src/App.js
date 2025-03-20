@@ -1,29 +1,10 @@
-<!-- # Namaste_React 🚀
-<!-- package.json is configuration for npm -->
- <!-- "parcel": "^2.13.3"  ^(caret) it is used to automatically updates its minor version, if you put ~(tilde) it will update major upgrade -->
- # Parcel
- - Dev Build
- - Local Server
- - Hot Module Replacement (HMR)
- - File Watching Algorithm - written in C++
- - Caching -  Faster Builds
- - Image Optimization
- - Minification
- - Bundling
- - Compress
- - Consistent Hashing
- - Code Splitting
- - Differential Bundling - support older browsers
- - Diagnostic
- - Error Handling
- - HTTPs
- - Tree Shaking -  remove unused code
- - Different dev and prod bundles
- 
-# Namaste Food(App.js file data with comments before moving to src folder):
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header"; //First export componenet which want n then import it where it is want or use.
+import Body from "./components/Body";
 
+
+/** For comment check Readme.md file **/
 /**
  * Header
  * - LOGO
@@ -41,77 +22,7 @@ import ReactDOM from "react-dom/client";
  * - Contact
  **/
 
- **//Two types of Export/Import
 
-    - Default Export/Import
-
-    export default Component
-    import Component from "path";
-
-    - Named Export/Import
-
-    export const Component;
-    immport {Component} from "path";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&sf=&txt_keyword=All"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  // const RestaurantCard = ({resName, cuisine}) => { //destructuring of object
-  // const { resName, cuisine } = props;
-  const { resData } = props;
-  const { cloudinaryImageId, 
-    name, 
-    cuisines, 
-    avgRating, 
-    costForTwo, 
-    sla } =
-    resData?.info; // ?. is known as optional chaining, here we destructuring name, cusines, avgRating etc.
-  // console.log(props);
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      {/* .....Here first{} bracket shows that something javascript inside in bracket, and another bracket shows javascript object. */}
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.deliveryTime} minutes</h4>
-
-      {/*   <h3>{props.resName}</h3>
-      <h4>{props.cuisine}</h4>
-      <h3>{resName}</h3>
-      <h4>{cuisine}</h4> destructuring of object
-      <h4>4.4 Star</h4>
-      <h4>38 minutes</h4> */}
-    </div>
-  );
-};
 
 const resList = [
   {
@@ -1714,36 +1625,7 @@ const resList = [
 ];
 
 // not using key (not acceptablr) <<<<<<<<< index as key <<<<<<<<<<<<<<< unique id(best practice),, if you dont have unique id then at least used index but you need to use unique key which recomanded.
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-        {/* whenever you r doing dot map/whenever you are looping onto anything , you have to always have to give a key over here . 
-         As per react documentation , never used Index as a key, because order may be changed , if here we used index as key then order of restaurant may be change. */}
 
-        {/* <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
-        <RestaurantCard resData={resList[3]} />
-        <RestaurantCard resData={resList[4]} />
-        <RestaurantCard resData={resList[5]} />
-        <RestaurantCard resData={resList[6]} />
-        <RestaurantCard resData={resList[7]} />
-        <RestaurantCard resData={resList[8]} />
-        <RestaurantCard resData={resList[9]} /> */}
-        {/* <RestaurantCard
-          resName="Meghana Foods"
-          cuisine="Biryani, North Indian, Asian"
-        />
-        <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" /> */}
-      </div>
-    </div>
-  );
-};
 
 const AppLayout = () => {
   return (
@@ -1757,4 +1639,3 @@ const AppLayout = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<AppLayout />);
- -->
