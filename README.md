@@ -53,6 +53,19 @@ import ReactDOM from "react-dom/client";
     export const Component;
     immport {Component} from "path";
 
+# React Hooks
+(Normal JS utility functions)
+ - useState() - Suoer powerful State Variables in React. 
+  //Whenever a state variable update react rerender its components.
+ - useEffect()
+
+  # React Fiber => https://github.com/acdlite/react-fiber-architecture
+
+
+
+
+
+//App.js file ==>
 const Header = () => {
   return (
     <div className="header">
